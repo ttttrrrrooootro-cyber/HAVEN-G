@@ -1,0 +1,140 @@
+
+<!doctype html><html lang="th"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HAVEN-G · USB ppm</title><style>
+:root{color-scheme:light;--ink:#142c32;--muted:#688087;--green:#126c58;--line:#dce6e6;--accent:#c6ed73;--warning:#a6640d;--danger:#c34444}
+*{box-sizing:border-box}body{margin:0;background:#edf3f2;color:var(--ink);font:15px/1.65 "Leelawadee UI",Tahoma,system-ui,sans-serif}button{font:inherit}main{max-width:1240px;margin:auto;padding:0 36px 48px}.topbar{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid #d6e2e1}.brand{font-family:system-ui,sans-serif;font-weight:800;letter-spacing:2px;font-size:24px;display:flex;align-items:center;gap:12px}.brand-mark{display:grid;place-items:center;width:38px;height:42px;border-radius:13px 13px 18px 18px;background:var(--green);color:var(--accent);font-size:22px}.topbar small{font-size:11px;letter-spacing:2px}.prototype{font-size:11px;font-weight:700;background:white;padding:6px 12px;border:1px solid var(--line);border-radius:30px;letter-spacing:1px}header{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:34px 0 26px}header>div{min-width:0}header>div:first-child{flex:1}header>div:last-child{text-align:right;max-width:440px}header small{font-size:12px}h1{font-size:clamp(25px,3vw,36px);line-height:1.35;letter-spacing:-1px;margin:8px 0}header p{margin:9px 0;color:var(--muted)}h2{font-size:17px;font-weight:600;margin:0 0 18px;letter-spacing:-.3px}small{color:var(--muted);line-height:1.7}.badge{display:inline-flex;align-items:center;padding:5px 12px;background:#e0e9e7;border:1px solid #d2dfdc;border-radius:20px;font-size:12px}.grid{display:grid;grid-template-columns:1.15fr 1fr .85fr;gap:18px;margin:22px 0}.card{min-width:0;background:#fff;border:1px solid var(--line);padding:25px;border-radius:22px;box-shadow:0 8px 26px #163a3504}.grid>.card{min-height:300px}.grid>.card:first-child{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff 65%,#f0f8e5)}.grid>.card:first-child:before{content:'LIVE SENSOR';display:block;font:10px system-ui;letter-spacing:2px;color:var(--green);margin-bottom:12px}.grid>.card:first-child h2{color:var(--muted);font-size:15px;margin-bottom:10px}.big{font:750 clamp(34px,5.5vw,74px)/1.2 system-ui,sans-serif;letter-spacing:-3px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}#rangeNote{font-size:12px;border-top:1px solid var(--line);padding-top:13px;margin-top:16px}#raw,#clock{font-size:11px;color:var(--muted)}.ai{background:#153b38;color:#f4faf7;border-color:#153b38;position:relative;overflow:hidden}.ai:before{content:'';position:absolute;width:140px;height:140px;border:25px solid #ffffff04;border-radius:50%;right:-50px;top:-50px;pointer-events:none}.ai small{color:#a1bfb4;font-size:11px}.ai>small:first-child{display:block;color:var(--accent);letter-spacing:.4px;margin-bottom:23px}.ai h2{font-size:23px;line-height:1.5;margin:0 0 12px}.ai p{font-size:13px;color:#cadfd5}.ai #trend{border-top:1px solid #ffffff20;padding-top:14px;color:var(--accent)}#fan,#buzzer{background:#f3f7f6;border:1px solid #e8efed;border-radius:13px;padding:15px;font-size:14px;margin:12px 0}.grid>.card:last-child>small{font-size:11px;display:block;margin-top:22px}.row{display:flex;gap:10px;flex-wrap:wrap}.row button{flex:1 1 180px;text-align:left;min-height:54px;background:#f4f8f7;color:var(--ink);border:1px solid var(--line)}.row button[data-cmd="3"],.row button[data-cmd="4"]{border-left:3px solid #d89b4e}.row button[data-cmd="0"]{flex:0 1 auto;color:var(--green)}button{padding:10px 15px;border-radius:10px;border:1px solid transparent;background:var(--green);color:#fff;cursor:pointer;font-size:13px;font-weight:600;transition:background .15s,transform .15s}button:hover:not(:disabled){filter:brightness(.94);transform:translateY(-1px)}button:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #79b9e2;outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}#disconnect{background:transparent;color:var(--muted);border-color:#cfdcd8}svg{display:block;width:100%;height:220px;margin:15px 0 10px;background:linear-gradient(#f6faf7,#fff);border-radius:10px}#line{stroke:#167d64;stroke-width:3;vector-effect:non-scaling-stroke}.note{background:#e6eddf;border:1px solid #d6e1cb;border-radius:13px;color:#536646;padding:12px 17px;font-size:12px;line-height:1.8}p,li{line-height:1.8}section.card>p{font-size:13px;color:var(--muted)}details{margin-top:20px!important}summary{cursor:pointer;font-weight:600;font-size:14px}details p{font-size:13px;color:var(--muted)}a{color:var(--green);text-underline-offset:3px}code{background:#edf3ef;padding:3px;color:var(--green)}#commandStatus{font-size:12px;color:var(--green)}footer{display:flex;justify-content:space-between;gap:12px;margin-top:26px;color:#79908a;font-size:11px}.eyebrow{font:600 11px system-ui,sans-serif;letter-spacing:2px;color:var(--green)}body[data-level="warning"] .ai{background:#6a4b21;border-color:#6a4b21}body[data-level="alarm"] .ai{background:#762f37;border-color:#762f37}body[data-level="simulation"] .ai{background:#344970;border-color:#344970}body[data-level="fault"] .ai{background:#465459;border-color:#465459}
+@media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}.grid>.card:last-child{grid-column:1/-1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.grid>.card:last-child h2,.grid>.card:last-child>small{grid-column:1/-1}.grid>.card:last-child>small{margin-top:8px}header{align-items:flex-start}header>div:last-child{max-width:330px}.big{font-size:62px}}
+@media(max-width:650px){main{padding:0 16px 28px}.topbar{padding:18px 0}.topbar small{display:none}.brand{font-size:21px}header{display:block;padding:24px 0}header>div:last-child{text-align:left;max-width:none;margin-top:22px}header>div:last-child p{display:flex;flex-wrap:wrap;gap:8px}header button{flex:1}.grid{grid-template-columns:1fr;gap:14px;margin:16px 0}.grid>.card{min-height:0}.grid>.card:last-child{display:block}.card{padding:22px;border-radius:18px}.big{font-size:clamp(35px,11vw,66px)}.row{display:grid;grid-template-columns:1fr}.row button{width:100%}.ai h2{font-size:22px}svg{height:190px}footer{display:block}.note{font-size:11px}}
+@media(prefers-reduced-motion:reduce){button{transition:none}button:hover:not(:disabled){transform:none}}
+</style><main><nav class="topbar" aria-label="แบรนด์"><div class="brand"><span class="brand-mark" aria-hidden="true">H</span>HAVEN-G</div><small>KITCHEN MONITORING SYSTEM</small><span class="prototype">PROTOTYPE</span></nav><header><div><span class="eyebrow">OVERVIEW / ภาพรวมระบบ</span><h1>มองเห็นทุกการเปลี่ยนแปลง</h1><p>ติดตามค่าแก๊สและสถานะอุปกรณ์แบบเรียลไทม์ ผ่าน USB</p></div><div><span id="conn" class="badge">ยังไม่เชื่อมต่อ USB</span><p><button id="connect">เชื่อมต่อ ESP32 ผ่าน USB</button> <button id="disconnect" disabled>ตัดการเชื่อมต่อ</button></p><small id="serialHelp">ปิด Serial Monitor ก่อน แล้วเลือกพอร์ตเดียวกับ Arduino IDE</small></div></header><div class="note">ต้นแบบเพื่อการศึกษา • ppm เป็นค่าประมาณ ยังไม่ได้สอบเทียบ • 500/1,000/2,000 ppm เป็นเกณฑ์ทดลอง • ค่าต่ำไม่ยืนยันว่าปลอดภัย • หากได้กลิ่นแก๊ส อย่าเปิดปิดสวิตช์หรือพัดลม ให้ออกจากบริเวณไปยังจุดปลอดภัย</div><div class="grid"><section class="card"><h2>ค่าแก๊สโดยประมาณ</h2><span id="gas" class="big">—</span> ppm<p>MQ-2 · LPG-equivalent โดยประมาณ · ช่วงระบุ 300–10,000 ppm</p><p id="rangeNote">ยังไม่มีค่า • รอข้อมูลจากบอร์ด</p><small id="raw">แรงดัน AOUT: —</small><p id="clock">รอข้อมูล</p></section><section class="card ai" aria-live="polite"><small>การประเมินตามเกณฑ์ทดลอง</small><h2 id="state">รอข้อมูล</h2><p id="reason">ยังประเมินสถานะไม่ได้</p><p id="trend">แนวโน้ม: —</p><small>ยังไม่ใช่ AI ที่ฝึกจากข้อมูลจริง ไม่สามารถยืนยันการรั่วหรือคาดการณ์การระเบิด</small></section><section class="card"><h2>การทำงานของอุปกรณ์</h2><p id="fan">พัดลม: —</p><p id="buzzer">บัซเซอร์: —</p><small>แสดงคำสั่งควบคุม ไม่ได้วัดว่าพัดลมหมุนจริง</small></section></div><section class="card"><span class="eyebrow">GAS HISTORY</span><h2 style="margin-top:8px">แนวโน้มแก๊ส · 60 ตัวอย่างล่าสุด</h2><svg viewBox="0 0 1000 180" preserveAspectRatio="none" aria-label="กราฟ ppm โดยประมาณ"><path d="M0 10H1000 M0 90H1000 M0 170H1000" stroke="#e0e8de"/><path id="line" fill="none" stroke="#338365" stroke-width="3"/></svg><small>แกนตั้ง <span id="scale">0–2,000</span> ppm · แกนนอนตัวอย่างจากเก่าไปใหม่ · กราฟแสดงผลจากสูตรตามที่บอร์ดส่ง แม้อยู่นอกช่วงวัด • ไม่ยืนยันความแม่นยำ • ค่าจำลองแยกชุดกราฟ</small></section><section class="card" style="margin-top:20px"><span class="eyebrow">ALERT CENTER</span><h2 style="margin-top:8px">แจ้งเตือนขณะสลับแท็บ</h2><div class="row"><button id="enableNotify">เปิดแจ้งเตือนบนคอม</button><button id="enableAudio">เปิดเสียงจากเว็บ</button><button id="testNotify">ทดสอบแจ้งเตือน</button></div><p id="notifyInfo" role="status">ยังไม่เปิดแจ้งเตือน • ต้องเปิดเว็บและเชื่อม USB ค้างไว้</p><p id="audioInfo" role="status">เสียงจากเว็บยังปิดอยู่ — แยกจาก buzzer บนบอร์ด</p><p>ชื่อแท็บแสดงค่า ppm และระดับเตือน เมื่อปิดเว็บ คอมหลับ หรือเบราว์เซอร์พักแท็บ การรับข้อมูลและแจ้งเตือนอาจหยุด บอร์ดยังคุม buzzer ตามโค้ดเมื่อมีไฟเลี้ยง</p><details><summary>เปิดแจ้งเตือนไม่ได้เมื่อเปิดไฟล์โดยตรง</summary><p>หากมี Python: เปิด Terminal ในโฟลเดอร์ไฟล์นี้ พิมพ์ <code>py -m http.server 8000 --bind 127.0.0.1</code> แล้วเปิด <a href="http://localhost:8000/KitchenGuard_USB.html">http://localhost:8000/KitchenGuard_USB.html</a> จากนั้นเชื่อม USB และอนุญาตแจ้งเตือนอีกครั้ง</p></details></section><section class="card" style="margin-top:20px"><span class="eyebrow">TEST LAB</span><h2 style="margin-top:8px">ทดสอบระบบโดยไม่ปล่อยแก๊ส</h2><p>ส่งค่าจำลองให้ ESP32 • จอและเว็บแสดง SIMULATION • สิ้นสุดเองใน 15 วินาที ค่าจำลองไม่ใช้ตั้งค่าอ้างอิง</p><div class="row"><button class="cmd" data-cmd="1" disabled>จำลอง 500 ppm · เตือน</button><button class="cmd" data-cmd="2" disabled>จำลอง 1,000 ppm · เสียงและพัดลม</button><button class="cmd" data-cmd="3" disabled>จำลอง 2,000 ppm · เตือนระดับสูง</button><button class="cmd" data-cmd="4" disabled>จำลอง 21,000 ppm · อ้างอิง LEL โพรเพน</button><button class="cmd" data-cmd="T" disabled>ทดสอบ buzzer + พัดลม 5 วินาที</button><button class="cmd" data-cmd="0" disabled>กลับไปค่าจริง</button></div><p id="commandStatus" aria-live="polite">เชื่อมต่อ USB เพื่อทดสอบ</p><small>โหมดจำลองยังคงอ่านเซนเซอร์จริง หากมีการเตือนจริง ปุ่มกลับไปค่าจริงจะไม่หยุดการเตือนนั้น</small></section><details class="card" style="margin-top:20px"><summary>เกณฑ์ทดลองและการใช้งาน</summary><p id="limits"></p><p>500 ppm: เกณฑ์เตือนที่เลือกสำหรับต้นแบบ โดยมีตัวอย่างผลิตภัณฑ์ CG ใช้จุดทำงานนี้<br>1,000 ppm: เกณฑ์สั่งเสียงและพัดลมของต้นแบบ; ค่า TWA ในเอกสารอ้างอิงไม่ใช่ระดับเริ่มเกิดอาการทันที<br>2,000 ppm: ค่า IDLH ของ LPG อิงความเสี่ยงการติดไฟประมาณ 10% LEL ไม่ใช่ระดับเริ่มขาดออกซิเจน<br>21,000 ppm: ค่า LEL ของโพรเพน ใช้อ้างอิงและจำลองเท่านั้น อยู่นอกช่วงวัด MQ-2 ไม่ยืนยันว่าจะระเบิดทันที</p><p>แหล่งอ้างอิง: <a href="https://www.cdc.gov/niosh/idlh/68476857.html" target="_blank" rel="noopener">NIOSH LPG</a> · <a href="https://enerai.co.th/tag/แก๊สรั่ว/" target="_blank" rel="noopener">ข้อมูลผลิตภัณฑ์ CG</a></p><p>ต่อ ESP32 เข้าคอมผ่านสาย USB ที่ส่งข้อมูลได้ เปิดไฟล์นี้ใน Chrome บนคอม แล้วกดเชื่อมต่อ USB เลือกพอร์ตของบอร์ด ไม่ต้องมีอินเทอร์เน็ตหรือ Wi-Fi บอร์ดทำงานต่อเมื่อปิดเว็บ ตราบใดที่ยังมีไฟเลี้ยง</p><p>แก้เกณฑ์ที่ต้นไฟล์ .ino แล้วอัปโหลดใหม่ แก้หน้าตาเว็บที่ KitchenGuard_USB.html แล้วเปิดใหม่ ไม่ต้องอัปโหลดหน้าเว็บลงบอร์ด</p><p>MQ-2 ต้องผ่านการอุ่นและสอบเทียบตามคู่มือ ช่วงรอเริ่มต้น 180 วินาทีในโค้ดไม่ใช่การสอบเทียบหรือการอุ่นครั้งแรก 48 ชั่วโมง</p></details><footer><span>HAVEN-G · ต้นแบบเฝ้าระวังแก๊สในห้องครัว</span><span>USB CONNECTED EXPERIENCE · ค่า ppm โดยประมาณ</span></footer></main><script>
+const $=id=>document.getElementById(id);
+let hist=[],lastUptime=null,lastMode=null,port=null,reader=null,readTask=null,lastReceived=0,writing=false;
+const buttons=()=>document.querySelectorAll('.cmd');
+function enableCommands(on){buttons().forEach(b=>b.disabled=!on||writing);}
+function resetReadings(){
+ $('gas').textContent='—';$('rangeNote').textContent='ยังไม่มีค่าปัจจุบัน';$('raw').textContent='แรงดัน AOUT: —';$('fan').textContent='พัดลม: ไม่ทราบสถานะ';$('buzzer').textContent='บัซเซอร์: ไม่ทราบสถานะ';$('trend').textContent='แนวโน้ม: —';hist=[];$('line').setAttribute('d','');
+}
+function trend(h){if(h.length<10)return null;const t=h.map(p=>(p.t-h[0].t)/60000),mt=t.reduce((a,b)=>a+b)/t.length,mv=h.reduce((a,p)=>a+p.v,0)/h.length,den=t.reduce((a,x)=>a+(x-mt)**2,0);return den?t.reduce((a,x,i)=>a+(x-mt)*(h[i].v-mv),0)/den:0;}
+function unavailable(message){backgroundUnavailable(message);document.body.dataset.level='fault';resetReadings();$('state').textContent='ประเมินไม่ได้';$('reason').textContent=message;$('clock').textContent='ไม่มีข้อมูลปัจจุบัน';enableCommands(false);}
+function createLineParser(onData,onMismatch=()=>{}){
+ let pending='',dropping=false;
+ return chunk=>{
+  for(const char of chunk){
+   if(char!=='\n'){if(!dropping){pending+=char;if(pending.length>8192){pending='';dropping=true;}}continue;}
+   const line=pending.trim();pending='';if(dropping){dropping=false;continue;}
+   if(!line.startsWith('KG:')){if(line.startsWith('ms='))onMismatch();continue;}
+   let d;try{d=JSON.parse(line.slice(3));}catch(e){continue;}
+   if(d.protocol!==2){onMismatch();continue;}
+   if(!['uptime_ms','warmup_left_s','watch','on','off'].every(k=>Number.isFinite(d[k])&&d[k]>=0))continue;
+   if(!['ppm_est','display_ppm','ao_v'].every(k=>d[k]===null||(Number.isFinite(d[k])&&d[k]>=0)))continue;
+   if(['simulation','gas_alarm','fan_command','buzzer_command','actuator_test','warming','calibrating','sensor_fault'].some(k=>typeof d[k]!=='boolean'))continue;
+   if(typeof d.status!=='string'||d.status.length>80||d.watch>=d.on||d.off>=d.on||d.off<d.watch)continue;
+   if(d.simulation&&d.display_ppm===null)continue;
+   onData(d);
+  }
+ };
+}
+function formatPPM(v){return v===null?'—':v.toLocaleString('th-TH',{maximumFractionDigits:2});}
+function acceptData(d){
+ lastReceived=Date.now();enableCommands(true);
+ if((lastUptime!==null&&d.uptime_ms<lastUptime)||lastMode!==d.simulation)hist=[];
+ lastUptime=d.uptime_ms;lastMode=d.simulation;
+ $('conn').textContent=d.simulation?'● USB · SIMULATION':'● รับข้อมูลผ่าน USB';
+ $('gas').textContent=d.simulation?Math.round(d.display_ppm).toLocaleString('th-TH'):formatPPM(d.display_ppm);
+ $('rangeNote').textContent=d.simulation?'ค่าจำลองสำหรับทดสอบ ไม่ใช่ค่าที่วัด':d.display_ppm===null?'ยังไม่มีค่า — ไม่ใช่การวัดได้ 0 ppm':d.display_ppm<300?'ค่าจากสูตรต่ำกว่าช่วงระบุ 300 ppm • ยังยืนยันความแม่นยำไม่ได้':d.display_ppm>10000?'ค่าจากสูตรเกินช่วงระบุ 10,000 ppm • ไม่ใช่ค่าความเข้มข้นที่ยืนยันแล้ว':'ค่า ppm โดยประมาณ • ยังไม่ได้สอบเทียบ';
+ $('raw').textContent='แรงดัน AOUT: '+(d.ao_v===null?'—':d.ao_v.toFixed(3)+' V')+(d.simulation?' • ค่าจริงโดยประมาณ: '+formatPPM(d.ppm_est)+' ppm':'');
+ $('clock').textContent='รับข้อมูลล่าสุด '+new Date().toLocaleTimeString('th-TH');
+ $('limits').textContent=`เกณฑ์ทดลอง: ตั้งแต่ ${d.watch} ppm เตือน / ตั้งแต่ ${d.on} ppm เสียงและพัดลม / 2,000 ppm เตือนระดับสูง / 21,000 ppm อ้างอิงโพรเพนเฉพาะจำลอง / ลดเหลือไม่เกิน ${d.off} ppm ต่อเนื่อง 10 วินาทีจึงหยุด`;
+ $('fan').textContent='คำสั่งพัดลม: '+(d.fan_command?'เปิด':'ปิด');
+ const cause=d.gas_alarm?'เตือนจากค่าแก๊ส':d.actuator_test?'ทดสอบอุปกรณ์':d.simulation&&d.display_ppm>=d.on?'ทดสอบค่าจำลอง':d.sensor_fault&&!d.warming?'เตือนเซนเซอร์หรือค่าอ้างอิงผิดปกติ':'';
+ $('buzzer').textContent='บัซเซอร์: '+(d.buzzer_command?'สั่งส่งเสียง • '+cause:'ไม่ได้สั่งส่งเสียง');
+ if(d.fan_command&&cause)$('fan').textContent+=' • '+cause;
+ let state,reason,valid=false;
+ if(d.gas_alarm){state=d.ppm_est>10000?'สัญญาณเกินช่วงวัด — ยืนยัน ppm ไม่ได้':d.ppm_est>=2000?'เตือนระดับสูง · ถึงเกณฑ์อ้างอิง 2,000 ppm':'แจ้งเตือนจากเซนเซอร์จริง';reason='เข้าสู่เกณฑ์ 1,000 ppm หรือกำลังรอให้ลดต่ำกว่าเกณฑ์หยุดเตือน';valid=d.display_ppm!==null;}
+ else if(d.simulation){state=d.display_ppm>=21000?'SIMULATION · ค่าอ้างอิง LEL โพรเพน':d.display_ppm>=2000?'SIMULATION · ระดับอ้างอิง IDLH':d.display_ppm>=d.on?'SIMULATION · เสียงและพัดลม':'SIMULATION · มีโอกาสเกิดอันตราย';reason='นี่คือค่าจำลองสำหรับทดสอบ ไม่ใช่ค่าแก๊สที่วัดได้';valid=true;}
+ else if(d.warming){state='กำลังอุ่นเซนเซอร์';reason='เหลือ '+d.warmup_left_s+' วินาที • เชื่อมต่อปกติ ยังไม่ประเมิน ppm';}
+ else if(d.sensor_fault){state='ตรวจเซนเซอร์ / ค่าอ้างอิง';reason='สถานะบอร์ด: '+d.status+' • ตรวจวงจรและ Serial ก่อนตั้งค่าอ้างอิงใหม่';}
+ else if(d.calibrating){state='กำลังตั้งค่าอ้างอิง';reason='เก็บสัญญาณ 30 วินาทีในอากาศสะอาด • ยังไม่ใช่การสอบเทียบ ppm';}
+ else if(d.ppm_est===null){state='ยังไม่มีค่า ppm';reason='สถานะบอร์ด: '+d.status;}
+ else {valid=true;state=d.ppm_est>=d.watch?'มีโอกาสเกิดอันตราย':'ต่ำกว่าเกณฑ์ทดลอง';reason='ประเมินจาก ppm โดยประมาณ ไม่ยืนยันว่ามีแก๊สรั่วหรือว่าห้องปลอดภัย';}
+ if(d.gas_alarm&&d.simulation)reason+=' • ตัวเลขใหญ่เป็นค่าจำลอง ดูค่าจริงด้านล่าง';
+ if(d.sensor_fault&&d.gas_alarm)reason+=' • สัญญาณปัจจุบันผิดปกติ คงคำสั่งเตือนเดิมไว้';
+ if(d.simulation)reason+=' • เซนเซอร์จริง: '+d.status;
+ if(d.simulation&&d.display_ppm>=21000)reason+=' • ค่านี้อยู่นอกช่วงวัด MQ-2 เป็นการทดสอบซอฟต์แวร์เท่านั้น';
+ if(!d.simulation&&d.ppm_est>=2000)reason+=' • ค่าเครื่องยังเป็นค่าประมาณ ไม่ใช่การยืนยันความเข้มข้นที่สอบเทียบแล้ว';
+ if(d.actuator_test)reason+=' • กำลังทดสอบอุปกรณ์ 5 วินาที';
+ document.body.dataset.level=d.gas_alarm?'alarm':d.simulation?'simulation':d.sensor_fault&&!d.warming?'fault':d.ppm_est!==null&&d.ppm_est>=d.watch?'warning':'normal';
+ $('state').textContent=state;$('reason').textContent=reason;
+ updateBackground(d,state);
+ if(valid){hist.push({v:d.display_ppm,t:d.uptime_ms});if(hist.length>60)hist.shift();}else hist=[];
+ const slope=trend(hist);$('trend').textContent=slope===null?'รอข้อมูลที่ใช้ได้อย่างน้อย 10 ตัวอย่าง':`แนวโน้ม ${slope>=0?'+':''}${Math.round(slope)} ppm/นาที`;
+ const maxY=Math.max(2000,...hist.map(p=>p.v));$('scale').textContent='0–'+Math.ceil(maxY).toLocaleString('th-TH');
+ $('line').setAttribute('d',hist.length?'M'+hist.map((p,i)=>`${i*1000/59},${170-p.v*160/maxY}`).join(' L'):'');
+}
+let notificationsEnabled=false,audioEnabled=false,audioContext=null,latestNotice=null;
+let lastAlertKey='',lastNoticeAt=0,lastBeepAt=0,lastFrame=null;
+function closeNotice(){if(latestNotice){latestNotice.close();latestNotice=null;}}
+function desktopNotice(title,body){
+ if(!notificationsEnabled||typeof Notification==='undefined'||Notification.permission!=='granted')return;
+ try{closeNotice();latestNotice=new Notification(title,{body,tag:'haven-g-status',requireInteraction:true});latestNotice.onclick=()=>{window.focus();closeNotice();};}
+ catch(e){$('notifyInfo').textContent='ระบบไม่ยอมแสดงแจ้งเตือน ลองเปิดผ่าน localhost และตรวจสิทธิ์เบราว์เซอร์';}
+}
+function beep(){
+ if(!audioEnabled||!audioContext)return;
+ if(audioContext.state!=='running'){$('audioInfo').textContent='เบราว์เซอร์พักเสียง กดปิดแล้วเปิดเสียงจากเว็บอีกครั้ง';return;}
+ const t=audioContext.currentTime;
+ for(let i=0;i<2;i++){const o=audioContext.createOscillator(),g=audioContext.createGain();o.frequency.value=880;g.gain.setValueAtTime(0,t+i*.3);g.gain.linearRampToValueAtTime(.12,t+i*.3+.02);g.gain.linearRampToValueAtTime(0,t+i*.3+.2);o.connect(g);g.connect(audioContext.destination);o.start(t+i*.3);o.stop(t+i*.3+.22);o.onended=()=>{o.disconnect();g.disconnect();};}
+}
+function updateBackground(d,state){
+ lastFrame=d;
+ const value=d.gas_alarm?d.ppm_est:d.display_ppm;
+ const simulated=d.simulation&&!d.gas_alarm;
+ const active=d.gas_alarm||(simulated&&value>=d.watch)||(!d.warming&&!d.calibrating&&!d.sensor_fault&&value!==null&&value>=d.watch);
+ const level=d.gas_alarm?(value>10000?'เกินช่วงวัด':value>=2000?'เตือนระดับสูง':'เตือนแก๊ส'):active?(value>=2000?'เตือนระดับสูง':value>=d.on?'เตือนแก๊ส':'เฝ้าระวัง'):d.warming?'อุ่นเซนเซอร์':d.sensor_fault?'ตรวจเซนเซอร์':d.calibrating?'ตั้งค่าอ้างอิง':value===null?'ยังไม่มีค่า':'ต่ำกว่าเกณฑ์';
+ document.title=`${simulated?'[จำลอง] ':''}${formatPPM(value)} ppm · ${level} | HAVEN-G`;
+ const key=(simulated?'sim:':'real:')+level;
+ const now=Date.now();
+ if(key!==lastAlertKey){lastNoticeAt=0;lastBeepAt=0;closeNotice();lastAlertKey=key;}
+ const faultAlert=d.sensor_fault&&!d.warming&&!simulated;
+ if((active||faultAlert)&&(lastNoticeAt===0||now-lastNoticeAt>=30000)){
+  desktopNotice((simulated?'[จำลอง] ':'')+'HAVEN-G · '+level,`${formatPPM(value)} ppm โดยประมาณ — ${state}`);lastNoticeAt=now;
+ }
+ if((d.gas_alarm||simulated&&value>=d.on||faultAlert)&&now-lastBeepAt>=3000){beep();lastBeepAt=now;}
+}
+function backgroundUnavailable(message){
+ document.title='ข้อมูลขาดหาย · HAVEN-G';lastFrame=null;
+ if(lastAlertKey!=='missing'){closeNotice();desktopNotice('HAVEN-G · ไม่มีข้อมูลปัจจุบัน',message);beep();lastAlertKey='missing';}
+}
+$('enableNotify').onclick=async()=>{
+ if(notificationsEnabled){notificationsEnabled=false;closeNotice();$('enableNotify').textContent='เปิดแจ้งเตือนบนคอม';$('notifyInfo').textContent='ปิดแจ้งเตือนบนคอมแล้ว';return;}
+ if(typeof Notification==='undefined'||!window.isSecureContext){$('notifyInfo').textContent='เบราว์เซอร์ไม่รองรับ หรือให้เปิดผ่าน localhost ตามคำแนะนำ';return;}
+ try{const permission=await Notification.requestPermission();notificationsEnabled=permission==='granted';$('enableNotify').textContent=notificationsEnabled?'ปิดแจ้งเตือนบนคอม':'เปิดแจ้งเตือนบนคอม';$('notifyInfo').textContent=notificationsEnabled?'เปิดแล้ว • เตือนเมื่อเปลี่ยนระดับ และซ้ำทุก 30 วินาทีขณะยังเตือน':'ยังไม่ได้รับอนุญาต ตรวจสิทธิ์การแจ้งเตือน หรือเปิดผ่าน localhost';lastNoticeAt=0;if(lastFrame)updateBackground(lastFrame,$('state').textContent);}catch(e){$('notifyInfo').textContent='ขอสิทธิ์ไม่ได้ ลองเปิดผ่าน localhost';}
+};
+$('enableAudio').onclick=async()=>{
+ if(audioEnabled){audioEnabled=false;$('enableAudio').textContent='เปิดเสียงจากเว็บ';$('audioInfo').textContent='ปิดเสียงจากเว็บแล้ว — ไม่ได้ปิด buzzer บนบอร์ด';return;}
+ try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)throw Error('unsupported');audioContext=audioContext||new Audio();await audioContext.resume();audioEnabled=true;$('enableAudio').textContent='ปิดเสียงจากเว็บ';$('audioInfo').textContent='เปิดเสียงคอมแล้ว • เตือนทุกประมาณ 3 วินาทีเมื่อถึงเกณฑ์เสียงและยังรับข้อมูล';beep();}catch(e){$('audioInfo').textContent='เปิดเสียงไม่ได้ ตรวจเบราว์เซอร์และอุปกรณ์เสียง';}
+};
+$('testNotify').onclick=()=>{if(!notificationsEnabled)$('notifyInfo').textContent='กดเปิดแจ้งเตือนบนคอมและอนุญาตก่อน';else desktopNotice('HAVEN-G · ทดสอบแจ้งเตือน','นี่เป็นการทดสอบ ไม่ใช่เหตุการณ์แก๊สรั่ว');beep();};
+async function sendCommand(command){
+ if(!port||!port.writable||writing)return;
+ writing=true;enableCommands(false);let writer;
+ try{writer=port.writable.getWriter();await writer.write(new TextEncoder().encode(command+'\n'));$('commandStatus').textContent=command==='0'?'ส่งคำสั่งกลับไปค่าจริงแล้ว':'ส่งคำสั่งทดสอบแล้ว รอดูผลจากบอร์ด';}
+ catch(e){$('commandStatus').textContent='ส่งคำสั่งไม่ได้ ตรวจ USB แล้วเชื่อมต่อใหม่';}
+ finally{if(writer)writer.releaseLock();writing=false;enableCommands(!!port&&lastReceived>0&&Date.now()-lastReceived<7000);}
+}
+buttons().forEach(b=>b.onclick=()=>sendCommand(b.dataset.cmd));
+async function readLoop(selected){
+ const decoder=new TextDecoder();const consume=createLineParser(acceptData,()=>{$('serialHelp').textContent='รูปแบบข้อมูลเก่า: อัปโหลด HAVEN_G_PPM.ino ฉบับที่ส่งพร้อมเว็บนี้';});
+ try{reader=selected.readable.getReader();for(;;){const {value,done}=await reader.read();if(done)break;consume(decoder.decode(value,{stream:true}));}}
+ catch(e){$('serialHelp').textContent='การเชื่อมต่อขาดหาย ตรวจสาย USB แล้วกดเชื่อมต่อใหม่';}
+ finally{if(reader){reader.releaseLock();reader=null;}try{await selected.close();}catch(e){}port=null;lastReceived=0;unavailable('ไม่ได้รับข้อมูลจากบอร์ด • ตรวจสายและเชื่อมต่อใหม่');$('conn').textContent='○ ไม่ได้เชื่อมต่อ';$('connect').disabled=false;$('disconnect').disabled=true;}
+}
+$('connect').onclick=async()=>{
+ if(!('serial' in navigator)||!window.isSecureContext){$('serialHelp').textContent='ใช้ Chrome หรือ Edge บนคอม หากเปิดไฟล์ไม่ได้ ให้เปิดผ่าน localhost';return;}
+ $('connect').disabled=true;let selected=null;
+ try{selected=await navigator.serial.requestPort();await selected.open({baudRate:115200});port=selected;hist=[];lastUptime=null;lastMode=null;lastReceived=Date.now();unavailable('เปิดพอร์ตแล้ว กำลังรอข้อมูลจากบอร์ด');$('conn').textContent='◌ เปิดพอร์ตแล้ว รอข้อมูล';$('serialHelp').textContent='115200 baud • ข้อมูลทุก 0.5 วินาที • เปิดพอร์ตอาจรีเซ็ตบอร์ด';$('disconnect').disabled=false;readTask=readLoop(selected);}
+ catch(e){port=null;$('connect').disabled=false;unavailable('ยังไม่ได้เชื่อมต่อบอร์ด');$('serialHelp').textContent=e.name==='NotFoundError'?'ยังไม่ได้เลือกพอร์ต':'เปิดพอร์ตไม่ได้: ปิด Serial Monitor/Plotter และแท็บอื่นที่ใช้พอร์ต';}
+};
+$('disconnect').onclick=async()=>{$('disconnect').disabled=true;if(reader)try{await reader.cancel();}catch(e){}if(readTask)await readTask;};
+setInterval(()=>{if(port&&lastReceived&&Date.now()-lastReceived>7000){unavailable('เปิดพอร์ตแต่ไม่ได้รับข้อมูลที่อ่านได้ ตรวจว่าอัปโหลด .ino ฉบับที่มาพร้อมเว็บนี้แล้ว');$('conn').textContent='○ ข้อมูลขาดหาย';}},1000);
+if(!('serial' in navigator)||!window.isSecureContext){$('connect').disabled=true;$('serialHelp').textContent='Web Serial ไม่พร้อม • ใช้ Chrome/Edge บนคอม หรือเปิดผ่าน localhost';}
+</script></html>
