@@ -1,0 +1,301 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>HAVEN-G · ติดตามแก๊ส</title><style>
+:root{color-scheme:dark;--ink:#f0f0f2;--muted:#a6a6ae;--line:#34343b;--green:#c9323e;--bg:#101014}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.65 "Leelawadee UI",Tahoma,system-ui,sans-serif}button{font:inherit}main{max-width:1160px;margin:auto;padding:26px 30px 32px}.topbar,.section-title,.card-head,.connection,.actions,.summaryline{display:flex;align-items:center;justify-content:space-between;gap:12px}.topbar{padding-bottom:22px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font:800 23px system-ui;letter-spacing:1px}.brand-mark{background:var(--green);color:white;border-radius:12px;width:39px;height:42px;display:grid;place-items:center;font-size:22px}.brand-sub{font:12px Tahoma;letter-spacing:0;color:var(--muted);font-weight:400;margin-top:4px}.connection{justify-content:flex-end;flex-wrap:wrap}.badge,.pill{border-radius:30px;padding:5px 11px;font-size:11px;background:#303037;color:#d4d4db;white-space:nowrap}.page-heading{margin:26px 0 20px}.page-heading h1{font-size:26px;letter-spacing:-.4px;margin:0}.page-heading p{color:var(--muted);margin:4px 0 0;font-size:12px}button{background:var(--green);border:1px solid transparent;border-radius:9px;padding:9px 13px;color:white;font-size:12px;cursor:pointer;transition:filter .15s}button.secondary,.secondary button{background:#1c1c22;border-color:var(--line);color:var(--ink)}button:hover:not(:disabled){filter:brightness(.94)}button:focus-visible,summary:focus-visible{outline:3px solid #91bfdf;outline-offset:3px}button:disabled{opacity:.4;cursor:not-allowed}.grid{display:grid;grid-template-columns:1.1fr 1.1fr 1fr;gap:16px}.card{background:#1c1c22;border:1px solid var(--line);border-radius:17px;padding:23px;min-width:0}.card-head{margin-bottom:18px}.card-head h2{margin:0}h2{font-size:15px;font-weight:600;margin:0 0 14px}.label{font-size:11px;color:var(--muted);letter-spacing:.5px}.reading{display:flex;gap:12px;align-items:baseline;min-height:88px}.big{font:700 clamp(30px,5vw,64px)/1.2 system-ui;letter-spacing:-2px;overflow-wrap:anywhere;min-width:0}.unit{color:var(--muted);font-size:15px}.meter{display:flex;gap:5px;height:5px;margin:10px 0 15px}.meter i{flex:1;border-radius:6px;background:#36363e}.meter i:first-child{background:#77777f}.meter i:nth-child(2){background:#96969e}.meter i:nth-child(3){background:#ae737b}.meter i:nth-child(4){background:#cb525f}.meter i:last-child{background:#eb3449}#rangeNote,#raw,#clock{font-size:11px;color:var(--muted);margin:5px 0}#state{font-size:21px;line-height:1.5;margin:20px 0 10px}.status-card{background:#262127;border-color:#423039}.status-card #reason{font-size:12px;color:#b9b4bc;margin:0}.status-card #trend{font-size:12px;margin:20px 0 0;padding-top:12px;border-top:1px solid #40363e}#fan{font-size:17px;font-weight:600;margin:20px 0 13px}#linkedSound{font-size:11px;color:var(--muted)}.device-mark{width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;color:var(--green);font:22px system-ui}.workspace{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}.chart svg{display:block;width:100%;height:240px;margin:14px 0 10px;background:linear-gradient(#202026,#19191f);border-radius:10px}#line{stroke:#ed485a;stroke-width:2.5;vector-effect:non-scaling-stroke}.chart small{font-size:11px;color:var(--muted)}.row{display:flex;flex-wrap:wrap;gap:8px}.monitor{margin-top:16px;padding:17px 22px}.actions{flex-wrap:wrap}.actions h2{margin:0}.monitor-status{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-top:10px}.monitor-status p{margin:0}details.card{margin-top:16px}summary{cursor:pointer;font-weight:600;font-size:13px;list-style-position:inside}details[open]>summary{margin-bottom:18px}.test-controls button{flex:1 1 160px;background:#292930;color:var(--ink);border-color:var(--line)}#exportStatus{font-size:12px;color:var(--muted);margin:12px 0 0}.advanced{display:grid;grid-template-columns:1fr 1fr;gap:16px}.advanced details{height:fit-content}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:12px}.compact{font-size:11px;color:var(--muted)}footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:#9b9ba4;margin-top:24px}#serialHelp{display:block;text-align:right;font-size:10px;color:var(--muted);margin-top:6px}body[data-level="warning"] .status-card{background:#33272b;border-color:#80505a}body[data-level="alarm"] .status-card{background:#481e28;border-color:#e3495a}body[data-level="simulation"] .status-card{background:#292730;border-color:#635b71}body[data-level="fault"] .status-card{background:#2a2a30;border-color:#595961}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}.grid>.card:last-child{grid-column:1/-1}.workspace{grid-template-columns:1fr}.topbar{align-items:flex-start}.chart svg{height:220px}}
+@media(max-width:600px){main{padding:18px 15px 26px}.topbar{display:block}.connection{justify-content:flex-start;margin-top:18px}#serialHelp{text-align:left}.grid,.advanced{grid-template-columns:1fr}.grid>.card:last-child{grid-column:auto}.card{padding:20px}.big{font-size:54px}.reading{min-height:70px}.workspace{gap:14px;margin-top:14px}.grid{gap:14px}.actions{align-items:flex-start}.actions #startWatch{width:100%;margin-top:6px}.test-controls button{flex-basis:100%}.page-heading h1{font-size:23px}}
+@media(prefers-reduced-motion:reduce){button{transition:none}}
+
+.card{box-shadow:0 10px 30px #00000018}.brand-mark{box-shadow:0 5px 18px #c9323e25}.chart svg{border:1px solid #303037}.table-scroll th{color:#f3b7bf}.table-scroll td,.table-scroll th{border-color:#38383f!important}button:focus-visible,summary:focus-visible{outline-color:#fa8491}
+.average-box{margin-top:14px;padding-top:12px;border-top:1px solid #40363e;font-size:11px}.average-box .summaryline{margin-bottom:7px}.average-box small{color:#aaa6ad;font-size:10px}.risk-track{height:5px;background:#36363e;border-radius:4px;margin:9px 0;overflow:hidden}#avgBar{height:100%;background:#ed485a;transition:width .2s}
+</style></head><body><main>
+<header class="topbar"><div class="brand"><span class="brand-mark" aria-hidden="true">H</span><div>HAVEN-G<div class="brand-sub">ระบบติดตามแก๊สในห้องครัว</div></div></div><div><div class="connection"><span id="conn" class="badge">ยังไม่เชื่อมต่อ</span><button id="connect">เชื่อมต่อ USB</button><button id="disconnect" class="secondary" disabled>ตัดการเชื่อมต่อ</button></div><small id="serialHelp">USB · 115200 baud</small></div></header>
+<div class="page-heading"><h1>ภาพรวมสถานะ</h1><p id="clock">รอข้อมูลจากอุปกรณ์</p></div>
+<div class="grid"><section class="card"><div class="card-head"><h2>ค่าแก๊ส</h2><span class="label">MQ-2</span></div><div class="reading"><span id="gas" class="big">—</span><span class="unit">ppm</span></div><div class="meter" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><p id="rangeNote">ค่าโดยประมาณ</p><small id="raw">AOUT: —</small></section>
+<section class="card status-card" aria-live="polite"><div class="card-head"><h2>สถานะประเมิน</h2><span class="pill">ตามเกณฑ์</span></div><h3 id="state">รอข้อมูล</h3><p id="reason">ยังไม่มีข้อมูลปัจจุบัน</p><p id="trend">แนวโน้ม: —</p><div class="average-box"><div class="summaryline"><span>ค่าเฉลี่ยย้อนหลัง <span id="avgSpan">—</span></span><strong id="avgValue">— ppm</strong></div><div class="summaryline"><span>ดัชนีค่าเฉลี่ยเทียบ 2,000 ppm</span><strong id="avgIndex">—</strong></div><div class="risk-track"><div id="avgBar" role="progressbar" aria-label="ดัชนีค่าเฉลี่ยเทียบเกณฑ์ ไม่ใช่โอกาสรั่ว" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div></div><small>ดัชนีนี้ไม่ใช่เปอร์เซ็นต์โอกาสแก๊สรั่ว</small></div></section>
+<section class="card"><div class="card-head"><h2>พัดลมและเสียงเตือน</h2><span class="device-mark" aria-hidden="true">↻</span></div><p id="fan">รอข้อมูล</p><p id="linkedSound">สถานะคำสั่งอุปกรณ์</p><div class="compact">คำสั่งเปิด/ปิด · ยังไม่ได้ตรวจการหมุนจริง</div></section></div>
+<div class="workspace"><section class="card chart"><div class="card-head"><h2>กราฟค่าแก๊ส</h2><span class="label">60 ตัวอย่างล่าสุด</span></div><svg viewBox="0 0 1000 180" preserveAspectRatio="none" aria-label="กราฟค่าแก๊สโดยประมาณ"><path d="M0 10H1000 M0 90H1000 M0 170H1000" stroke="#393940"/><path id="line" fill="none" stroke="#ed485a" stroke-width="3"/></svg><div class="summaryline"><small><span id="scale">0–2,000</span> ppm</small><small>เก่า → ใหม่</small></div></section>
+</div>
+<section class="card monitor"><div class="actions"><h2>การแจ้งเตือน</h2><button id="startWatch">เปิดเสียงและแจ้งเตือน</button></div><div class="monitor-status"><p id="notifyInfo" role="status">แจ้งเตือน: ยังไม่เปิด</p><p id="audioInfo" role="status">เสียงเว็บ: ยังไม่เปิด</p></div></section>
+<div class="advanced"><details class="card"><summary>ตัวเลือกเสียงและการแจ้งเตือน</summary><div class="row secondary"><button id="enableNotify">เปิดแจ้งเตือนบนคอม</button><button id="enableAudio">เปิดเสียงจากเว็บ</button></div></details></div>
+<details class="card"><summary>บันทึกข้อมูลจากอุปกรณ์</summary><button id="exportData" class="secondary">ดาวน์โหลดข้อมูลจริง CSV</button><p id="exportStatus" role="status" class="compact">บันทึกเฉพาะช่วงที่เปิดเว็บและเชื่อมต่ออยู่</p></details>
+<footer><span>HAVEN-G · ต้นแบบ · ppm โดยประมาณ</span><span id="limits">เว็บเตือน 2,000 ppm</span><span>พื้นหลัง: ต้องเปิดเว็บและเชื่อมต่ออยู่</span></footer></main><script>
+const WEB_ALERT_PPM=2000;
+let riskSamples=[];
+function resetRollingStats(){
+ riskSamples=[];$('avgValue').textContent='— ppm';$('avgIndex').textContent='—';$('avgSpan').textContent='—';$('avgBar').style.width='0%';$('avgBar').removeAttribute?.('aria-valuenow');
+}
+function pushRiskSample(value,time){
+ const last=riskSamples.at(-1);
+ if(last&&(time<last.t||time-last.t>2000))riskSamples=[];
+ if(riskSamples.at(-1)?.t===time)riskSamples.pop();
+ riskSamples.push({v:value,t:time});
+ const cutoff=time-60000;
+ while(riskSamples.length>2&&riskSamples[1].t<=cutoff)riskSamples.shift();
+ if(riskSamples.length<2)return null;
+ const start=Math.max(cutoff,riskSamples[0].t),duration=time-start;
+ if(duration<5000)return null;
+ let area=0;
+ for(let i=1;i<riskSamples.length;i++){
+  const a=riskSamples[i-1],b=riskSamples[i];if(b.t<=start)continue;
+  const left=Math.max(a.t,start),vleft=a.v+(b.v-a.v)*(left-a.t)/(b.t-a.t);
+  area+=(vleft+b.v)/2*(b.t-left);
+ }
+ const average=area/duration;
+ return {average,coverage_s:duration/1000,index:Math.max(0,Math.min(100,average/WEB_ALERT_PPM*100))};
+}
+function showRollingStats(d){
+ if(d.warming||d.calibrating||d.sensor_fault||!Number.isFinite(d.ppm_est)||d.ppm_est<0||d.ppm_est>10000){resetRollingStats();return null;}
+ const r=pushRiskSample(d.ppm_est,d.uptime_ms);
+ if(!r){$('avgValue').textContent='กำลังเก็บข้อมูล';$('avgIndex').textContent='—';$('avgSpan').textContent='ไม่ถึง 5 วินาที';$('avgBar').style.width='0%';$('avgBar').removeAttribute?.('aria-valuenow');return null;}
+ $('avgValue').textContent=formatPPM(r.average)+' ppm';$('avgIndex').textContent=r.index.toFixed(1)+'%';$('avgSpan').textContent=r.coverage_s.toFixed(0)+' วินาที';$('avgBar').style.width=r.index+'%';$('avgBar').setAttribute('aria-valuenow',r.index.toFixed(1));
+ return r;
+}
+const $=id=>document.getElementById(id);
+let hist=[],lastUptime=null,lastMode=null,port=null,reader=null,readTask=null,lastReceived=0,writing=false;
+let connectionWanted=false,connectionTask=null,savedPort=null,dataDelayed=false;
+const serialPause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const buttons=()=>document.querySelectorAll('.cmd');
+function enableCommands(on){buttons().forEach(b=>b.disabled=!on||writing);}
+function resetReadings(){
+ $('gas').textContent='—';$('rangeNote').textContent='ยังไม่มีค่าปัจจุบัน';$('raw').textContent='แรงดัน AOUT: —';$('fan').textContent='พัดลมและเสียงเตือน: ไม่ทราบสถานะ';$('linkedSound').textContent='รอข้อมูลจากบอร์ด';$('trend').textContent='แนวโน้ม: —';hist=[];$('line').setAttribute('d','');
+}
+function trend(h){if(h.length<10)return null;const t=h.map(p=>(p.t-h[0].t)/60000),mt=t.reduce((a,b)=>a+b)/t.length,mv=h.reduce((a,p)=>a+p.v,0)/h.length,den=t.reduce((a,x)=>a+(x-mt)**2,0);return den?t.reduce((a,x,i)=>a+(x-mt)*(h[i].v-mv),0)/den:0;}
+function unavailable(message){resetRollingStats();backgroundUnavailable(message);document.body.dataset.level='fault';resetReadings();$('state').textContent='ประเมินไม่ได้';$('reason').textContent=message;$('clock').textContent='ไม่มีข้อมูลปัจจุบัน';enableCommands(false);}
+function createLineParser(onData,onMismatch=()=>{}){
+ let pending='',dropping=false;
+ return chunk=>{
+  for(const char of chunk){
+   if(char!=='\n'){if(!dropping){pending+=char;if(pending.length>8192){pending='';dropping=true;}}continue;}
+   const line=pending.trim();pending='';if(dropping){dropping=false;continue;}
+   if(!line.startsWith('KG:')){if(line.startsWith('ms='))onMismatch();continue;}
+   let d;try{d=JSON.parse(line.slice(3));}catch(e){continue;}
+   if(d.protocol!==2){onMismatch();continue;}
+   if(!['uptime_ms','warmup_left_s','watch','on','off'].every(k=>Number.isFinite(d[k])&&d[k]>=0))continue;
+   if(!['ppm_est','display_ppm','ao_v'].every(k=>d[k]===null||(Number.isFinite(d[k])&&d[k]>=0)))continue;
+   if(['simulation','gas_alarm','fan_command','buzzer_command','actuator_test','warming','calibrating','sensor_fault'].some(k=>typeof d[k]!=='boolean'))continue;
+   if(typeof d.status!=='string'||d.status.length>80||d.watch>=d.on||d.off>=d.on||d.off<d.watch)continue;
+   if(d.simulation&&d.display_ppm===null)continue;
+   onData(d);
+  }
+ };
+}
+function formatPPM(v){return v===null?'—':v.toLocaleString('th-TH',{maximumFractionDigits:2});}
+function acceptData(d){
+ lastReceived=Date.now();dataDelayed=false;enableCommands(true);$('serialHelp').textContent='115200 baud · รับข้อมูลปกติ';
+ if((lastUptime!==null&&d.uptime_ms<lastUptime)||lastMode!==d.simulation)hist=[];
+ lastUptime=d.uptime_ms;lastMode=d.simulation;
+ $('conn').textContent=d.simulation?'● USB · SIMULATION':'● รับข้อมูลผ่าน USB';
+ $('gas').textContent=formatPPM(d.ppm_est);
+ $('rangeNote').textContent=d.simulation?'MQ-2 จริง • ค่าทดสอบแยก '+formatPPM(d.display_ppm)+' ppm':d.ppm_est===null?'ยังไม่มีค่า':d.ppm_est<300?'MQ-2 จริง • ค่าประมาณต่ำกว่าช่วงวัด':d.ppm_est>10000?'MQ-2 จริง • ค่าประมาณเกินช่วงวัด':'MQ-2 จริง • ppm โดยประมาณ';
+ $('raw').textContent='แรงดัน AOUT: '+(d.ao_v===null?'—':d.ao_v.toFixed(3)+' V')+(d.simulation?' • ค่าจริงโดยประมาณ: '+formatPPM(d.ppm_est)+' ppm':'');
+ $('clock').textContent='รับข้อมูลล่าสุด '+new Date().toLocaleTimeString('th-TH');
+ $('limits').textContent=`เว็บเตือน ${WEB_ALERT_PPM} · บอร์ดสั่งพัดลม ${d.on} ppm`;
+ $('fan').textContent='คำสั่งพัดลมและเสียงเตือน: '+(d.fan_command?'เปิดร่วมกัน':'ปิดร่วมกัน');
+ const cause=d.gas_alarm?'เตือนจากค่าแก๊ส':d.actuator_test?'ทดสอบอุปกรณ์':d.simulation&&d.display_ppm>=d.on?'ทดสอบค่าจำลอง':d.sensor_fault&&!d.warming?'เตือนเซนเซอร์หรือค่าอ้างอิงผิดปกติ':'';
+ $('linkedSound').textContent=d.fan_command!==d.buzzer_command?'คำสั่งเสียงไม่ตรงกับพัดลม กรุณาอัปโหลด .ino ฉบับล่าสุด':'เสียงทำงานร่วมกับคำสั่งพัดลม';
+ if(d.fan_command&&cause)$('fan').textContent+=' • '+cause;
+ const averageStats=showRollingStats(d);
+ const usable=!d.warming&&!d.calibrating&&!d.sensor_fault&&Number.isFinite(d.ppm_est)&&d.ppm_est>=0;
+ const webAlarm=usable&&d.ppm_est>=WEB_ALERT_PPM;
+ let state,reason,valid=false;
+ if(d.warming){state='กำลังอุ่นเซนเซอร์';reason='เหลือ '+d.warmup_left_s+' วินาที';}
+ else if(d.sensor_fault){state='ตรวจเซนเซอร์ / ค่าอ้างอิง';reason='ประเมินไม่ได้ • '+d.status;}
+ else if(d.calibrating){state='กำลังตั้งค่าอ้างอิง';reason='กำลังเก็บสัญญาณอ้างอิง';}
+ else if(!usable){state='ยังไม่มีค่า ppm';reason='รอข้อมูลที่ใช้ประเมินได้';}
+ else if(webAlarm){valid=true;state='สงสัยแก๊สรั่ว';reason='ถึงเกณฑ์แจ้งเตือนเว็บ 2,000 ppm'+(d.ppm_est>10000?' • ค่าสูงเกินช่วงวัด':' • ค่า ppm โดยประมาณ');}
+ else{valid=true;state='ต่ำกว่าเกณฑ์แจ้งเตือน';reason=averageStats?'ค่าเฉลี่ย '+formatPPM(averageStats.average)+' ppm • ดัชนีเทียบเกณฑ์ '+averageStats.index.toFixed(1)+'%':'กำลังรวบรวมข้อมูลเพื่อคำนวณค่าเฉลี่ย';}
+ if(d.simulation)reason+=' • ค่าทดสอบแยก '+formatPPM(d.display_ppm)+' ppm';
+ if(d.actuator_test)reason+=' • ทดสอบพัดลมและเสียง';
+ if(d.gas_alarm&&!webAlarm)reason+=' • บอร์ดยังคงคำสั่งเตือนตามเกณฑ์ของบอร์ด';
+ document.body.dataset.level=webAlarm?'alarm':!usable?'fault':d.simulation?'simulation':'normal';
+ $('state').textContent=state;$('reason').textContent=reason;
+ updateBackground(d,state);
+ recordDeviceData(d);
+ if(!d.warming&&!d.sensor_fault&&d.ppm_est!==null){hist.push({v:d.ppm_est,t:d.uptime_ms});if(hist.length>60)hist.shift();}else hist=[];
+ const slope=trend(hist);$('trend').textContent=slope===null?'รอข้อมูลที่ใช้ได้อย่างน้อย 10 ตัวอย่าง':`แนวโน้ม ${slope>=0?'+':''}${Math.round(slope)} ppm/นาที`;
+ const maxY=Math.max(2000,...hist.map(p=>p.v));$('scale').textContent='0–'+Math.ceil(maxY).toLocaleString('th-TH');
+ $('line').setAttribute('d',hist.length?'M'+hist.map((p,i)=>`${i*1000/59},${170-p.v*160/maxY}`).join(' L'):'');
+}
+let notificationsEnabled=false,audioEnabled=false,audioContext=null,latestNotice=null;
+let lastAlertKey='',lastNoticeAt=0,lastBeepAt=0,lastFrame=null;
+function closeNotice(){if(latestNotice){latestNotice.close();latestNotice=null;}}
+function desktopNotice(title,body){
+ if(!notificationsEnabled||typeof Notification==='undefined'||Notification.permission!=='granted')return;
+ try{closeNotice();latestNotice=new Notification(title,{body,tag:'haven-g-status',requireInteraction:true});latestNotice.onclick=()=>{window.focus();closeNotice();};}
+ catch(e){$('notifyInfo').textContent='ระบบไม่ยอมแสดงแจ้งเตือน ลองเปิดผ่าน localhost และตรวจสิทธิ์เบราว์เซอร์';}
+}
+let sirenVoice=null;
+function stopSiren(kind){
+ if(!sirenVoice||(kind&&sirenVoice.kind!==kind))return;
+ const voice=sirenVoice;sirenVoice=null;
+ try{voice.oscillator.stop();}catch(e){}
+ voice.oscillator.disconnect();voice.gain.disconnect();
+}
+function beep(kind='alarm'){
+ if(!audioEnabled||!audioContext)return;
+ if(audioContext.state!=='running'){$('audioInfo').textContent='เสียงถูกพัก • กดเปิดเสียงอีกครั้ง';return;}
+ stopSiren();
+ const t=audioContext.currentTime,duration=1.8;
+ const oscillator=audioContext.createOscillator(),gain=audioContext.createGain();
+ // Three rising/falling sweeps. A triangle wave is less harsh than square.
+ oscillator.type='triangle';oscillator.frequency.setValueAtTime(650,t);
+ for(let i=0;i<3;i++){
+  oscillator.frequency.linearRampToValueAtTime(1250,t+i*.6+.3);
+  oscillator.frequency.linearRampToValueAtTime(650,t+(i+1)*.6);
+ }
+ gain.gain.setValueAtTime(0,t);
+ gain.gain.linearRampToValueAtTime(.14,t+.04);
+ gain.gain.setValueAtTime(.14,t+duration-.08);
+ gain.gain.linearRampToValueAtTime(0,t+duration);
+ oscillator.connect(gain);gain.connect(audioContext.destination);
+ const voice={oscillator,gain,kind};sirenVoice=voice;
+ oscillator.onended=()=>{oscillator.disconnect();gain.disconnect();if(sirenVoice===voice)sirenVoice=null;};
+ oscillator.start(t);oscillator.stop(t+duration);
+}
+function updateBackground(d,state){
+ lastFrame=d;
+ const usable=!d.warming&&!d.calibrating&&!d.sensor_fault&&Number.isFinite(d.ppm_est)&&d.ppm_est>=0;
+ const alarm=usable&&d.ppm_est>=WEB_ALERT_PPM;
+ const test=d.actuator_test||(d.simulation&&d.display_ppm>=WEB_ALERT_PPM);
+ const active=alarm||test;
+ if(!active)stopSiren('alarm');
+ const value=alarm?d.ppm_est:test?d.display_ppm:d.ppm_est;
+ const prefix=!alarm&&test?'[ทดสอบ] ':'';
+ const level=alarm?'สงสัยแก๊สรั่ว':test?'ทดสอบการแจ้งเตือน':usable?'ต่ำกว่าเกณฑ์':d.warming?'อุ่นเซนเซอร์':'ประเมินไม่ได้';
+ document.title=`${prefix}${formatPPM(value)} ppm · ${level} | HAVEN-G`;
+ const key=prefix+level,now=Date.now();
+ if(key!==lastAlertKey){lastNoticeAt=0;lastBeepAt=0;closeNotice();lastAlertKey=key;}
+ const faultAlert=d.sensor_fault&&!d.warming;
+ if((active||faultAlert)&&(lastNoticeAt===0||now-lastNoticeAt>=30000)){
+  desktopNotice(prefix+'HAVEN-G · '+level,`${formatPPM(value)} ppm โดยประมาณ — ${state}`);lastNoticeAt=now;
+ }
+ if(active&&now-lastBeepAt>=3000){beep();lastBeepAt=now;}
+}
+function backgroundUnavailable(message){
+ document.title='ข้อมูลขาดหาย · HAVEN-G';lastFrame=null;stopSiren();
+ if(lastAlertKey!=='missing'){closeNotice();desktopNotice('HAVEN-G · ไม่มีข้อมูลปัจจุบัน',message);beep();lastAlertKey='missing';}
+}
+$('enableNotify').onclick=async()=>{
+ if(notificationsEnabled){notificationsEnabled=false;closeNotice();$('enableNotify').textContent='เปิดแจ้งเตือนบนคอม';$('notifyInfo').textContent='ปิดแจ้งเตือนบนคอมแล้ว';return;}
+ if(typeof Notification==='undefined'||!window.isSecureContext){$('notifyInfo').textContent='เบราว์เซอร์ไม่รองรับ หรือให้เปิดผ่าน localhost ตามคำแนะนำ';return;}
+ try{const permission=await Notification.requestPermission();notificationsEnabled=permission==='granted';$('enableNotify').textContent=notificationsEnabled?'ปิดแจ้งเตือนบนคอม':'เปิดแจ้งเตือนบนคอม';$('notifyInfo').textContent=notificationsEnabled?'แจ้งเตือน: เปิดแล้ว':'ยังไม่ได้รับอนุญาต ตรวจสิทธิ์การแจ้งเตือน หรือเปิดผ่าน localhost';lastNoticeAt=0;if(lastFrame)updateBackground(lastFrame,$('state').textContent);}catch(e){$('notifyInfo').textContent='ขอสิทธิ์ไม่ได้ ลองเปิดผ่าน localhost';}
+};
+$('enableAudio').onclick=async()=>{
+ if(audioEnabled){audioEnabled=false;stopSiren();$('enableAudio').textContent='เปิดเสียงจากเว็บ';$('audioInfo').textContent='ปิดเสียงจากเว็บแล้ว — ไม่ได้ปิด buzzer บนบอร์ด';return;}
+ try{const Audio=window.AudioContext||window.webkitAudioContext;if(!Audio)throw Error('unsupported');audioContext=audioContext||new Audio();await audioContext.resume();audioEnabled=true;$('enableAudio').textContent='ปิดเสียงจากเว็บ';$('audioInfo').textContent='เสียงเว็บ: ไซเรนเปิดแล้ว · เกณฑ์เว็บ 2,000 ppm';beep('preview');}catch(e){$('audioInfo').textContent='เปิดเสียงไม่ได้ ตรวจเบราว์เซอร์และอุปกรณ์เสียง';}
+};
+$('startWatch').onclick=async()=>{
+ // Invoke both from this click so browser permission/audio activation is valid.
+ const pending=[];
+ if(!audioEnabled)pending.push($('enableAudio').onclick());
+ if(!notificationsEnabled)pending.push($('enableNotify').onclick());
+ await Promise.allSettled(pending);
+ $('startWatch').textContent=audioEnabled&&notificationsEnabled?'เปิดเสียงและแจ้งเตือนแล้ว':'ตรวจข้อความสิทธิ์เสียง / แจ้งเตือนด้านล่าง';
+ lastBeepAt=0;lastNoticeAt=0;if(lastFrame)updateBackground(lastFrame,$('state').textContent);
+};
+let dataRows=[];
+function recordDeviceData(d){
+ if(d.simulation||d.actuator_test)return;
+ dataRows.push({received_at:new Date().toISOString(),uptime_ms:d.uptime_ms,ppm_est:d.ppm_est,ao_v:d.ao_v,gas_alarm:d.gas_alarm,fan_command:d.fan_command,buzzer_command:d.buzzer_command,sensor_fault:d.sensor_fault,warming:d.warming,calibrating:d.calibrating,data_origin:'device_sensor_estimate'});
+ if(dataRows.length>50000)dataRows.shift();
+ $('exportStatus').textContent='เก็บข้อมูลแล้ว '+dataRows.length.toLocaleString('th-TH')+' แถว · สูงสุด 50,000 แถวล่าสุด · ดาวน์โหลดก่อนปิดเว็บ';
+}
+$('exportData').onclick=()=>{
+ if(!dataRows.length){$('exportStatus').textContent='ยังไม่มีข้อมูลจากบอร์ด';return;}
+ const keys=Object.keys(dataRows[0]);const text='\uFEFF'+keys.join(',')+'\n'+dataRows.map(r=>keys.map(k=>r[k]===null||r[k]===undefined?'':String(r[k])).join(',')).join('\n');
+ const url=URL.createObjectURL(new Blob([text],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='HAVEN_G_MQ2_readings.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+};
+async function readLoop(selected,onValid=()=>{}){
+ let readErrors=0;
+ while(connectionWanted&&selected.readable){
+  // A recovered stream starts a new decoder/parser: discard broken fragments.
+  const decoder=new TextDecoder();
+  const consume=createLineParser(d=>{readErrors=0;onValid();acceptData(d);},()=>{$('serialHelp').textContent='รูปแบบข้อมูลไม่ตรงกับเว็บ • ตรวจ .ino ล่าสุด';});
+  let activeReader=null;
+  try{
+   activeReader=selected.readable.getReader();reader=activeReader;
+   for(;;){
+    const {value,done}=await activeReader.read();
+    if(done||!connectionWanted)return;
+    if(value)consume(decoder.decode(value,{stream:true}));
+   }
+  }catch(e){
+   if(!connectionWanted)return;
+   if(!selected.readable||++readErrors>3)throw e;
+   $('serialHelp').textContent='กำลังกู้การอ่าน USB ('+readErrors+'/3)';
+  }finally{
+   if(activeReader){try{activeReader.releaseLock();}catch(e){}}
+   if(reader===activeReader)reader=null;
+  }
+  await serialPause(150);
+ }
+}
+async function connectionLoop(selected){
+ let attempts=0;
+ while(connectionWanted&&attempts<5){
+  try{
+   await selected.open({baudRate:115200,bufferSize:65536,flowControl:'none'});
+   if(!connectionWanted){await selected.close();break;}
+   port=selected;dataDelayed=false;hist=[];lastUptime=null;lastMode=null;lastReceived=Date.now();
+   unavailable('พอร์ตเปิดแล้ว กำลังรอข้อมูลจากบอร์ด');
+   $('conn').textContent='◌ USB เปิดแล้ว · รอข้อมูล';
+   $('serialHelp').textContent='115200 baud · กู้การเชื่อมต่ออัตโนมัติ';
+   $('disconnect').disabled=false;
+   readTask=readLoop(selected,()=>{attempts=0;});
+   await readTask;
+  }catch(e){
+   $('serialHelp').textContent='USB: '+(e.name||'Error')+' · ปิดโปรแกรมอื่นที่ใช้พอร์ต';
+  }finally{
+   port=null;lastReceived=0;
+   try{await selected.close();}catch(e){}
+  }
+  if(!connectionWanted)break;
+  attempts++;
+  unavailable('การรับข้อมูลหยุด กำลังเชื่อมพอร์ตเดิมใหม่');
+  $('conn').textContent='◌ กำลังเชื่อมต่อใหม่ '+attempts+'/5';
+  if(attempts<5)await serialPause(Math.min(1000*Math.pow(2,attempts-1),8000));
+ }
+ if(connectionWanted){
+  unavailable('เชื่อมต่ออัตโนมัติไม่สำเร็จ • ตรวจสายและพอร์ต');
+  $('conn').textContent='○ รออุปกรณ์ · กดเชื่อมต่อเพื่อลองใหม่';
+ }else{
+  // An intentional disconnect must not trigger a new failure siren.
+  lastAlertKey='missing';unavailable('ตัดการเชื่อมต่อแล้ว');
+  $('conn').textContent='○ ไม่ได้เชื่อมต่อ';document.title='ไม่ได้เชื่อมต่อ · HAVEN-G';
+ }
+ $('connect').disabled=false;$('disconnect').disabled=true;
+}
+function startConnection(selected){
+ if(connectionTask)return connectionTask;
+ connectionWanted=true;$('connect').disabled=true;$('disconnect').disabled=false;
+ connectionTask=connectionLoop(selected).finally(()=>{connectionTask=null;});
+ return connectionTask;
+}
+$('connect').onclick=async()=>{
+ if(connectionTask)return;
+ if(!('serial' in navigator)||!window.isSecureContext){$('serialHelp').textContent='ใช้ Chrome/Edge บนคอม หรือเปิดผ่าน localhost';return;}
+ $('connect').disabled=true;
+ try{savedPort=await navigator.serial.requestPort();startConnection(savedPort);}
+ catch(e){$('connect').disabled=false;$('serialHelp').textContent=e.name==='NotFoundError'?'ยังไม่ได้เลือกพอร์ต':'เลือกพอร์ตไม่ได้: '+e.name;}
+};
+$('disconnect').onclick=async()=>{
+ connectionWanted=false;$('disconnect').disabled=true;
+ if(reader)try{await reader.cancel();}catch(e){}
+ if(connectionTask)await connectionTask;
+};
+function checkFreshness(){
+ if(port&&lastReceived&&Date.now()-lastReceived>7000&&!dataDelayed){
+  dataDelayed=true;unavailable('USB ยังเปิด แต่ข้อมูลล่าช้า • กำลังรอข้อมูลใหม่');
+  $('conn').textContent='◌ USB ยังเปิด · ข้อมูลล่าช้า';
+ }
+}
+setInterval(checkFreshness,1000);
+if(document.addEventListener)document.addEventListener('visibilitychange',()=>{
+ checkFreshness();
+ if(document.visibilityState==='visible'&&lastFrame&&Date.now()-lastReceived<=7000)updateBackground(lastFrame,$('state').textContent);
+});
+// Only retry the same port explicitly selected by the user in this page.
+if(navigator.serial&&navigator.serial.addEventListener)navigator.serial.addEventListener('connect',event=>{
+ if(connectionWanted&&!connectionTask&&savedPort&&event.target===savedPort)startConnection(savedPort);
+});
+if(!('serial' in navigator)||!window.isSecureContext){$('connect').disabled=true;$('serialHelp').textContent='Web Serial ไม่พร้อม • ใช้ Chrome/Edge บนคอม หรือเปิดผ่าน localhost';}
+</script></body></html>
